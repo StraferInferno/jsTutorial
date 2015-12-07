@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Click the button to display the extracted part of the string.</p>
+    <button onclick="myFunction()">Try it</button>
+    <div>w3resource</div>
+    <p id="demo"></p>
+    <script>
+    function myFunction() {
+        var str = "w3resource";
+        var res = '';
+        var div = document.getElementById("demo");
+        var eval = function(string) {
+
+            var last = string.slice(-1);
+            var rest = string.slice(0, 9);
+
+            console.log(rest);
+            var res = last + rest;
+            return res;
+        }
+
+        for (i = 0; i < 9; i++) {
+            var html = eval(str);
+            str = html;
+            debugger
+            div.innerHTML = div.innerHTML + " " + html;
+
+
+        }
+
+    }
+    </script>
+</body>
+
+</html>

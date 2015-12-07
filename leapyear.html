@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the extracted part of the string.</p>
+<div>Leap Year or Not!!</div>
+<input id="year" placeholder="Type in the Year" >
+<button onclick="xyz()">Try it</button>
+<p id="demo"></p>
+
+<script> 
+function xyz(){
+var result = result || 'Oops Techinal Problem';
+
+var myYear = document.getElementById("year").value;
+
+var daysInYear = function(myYear){
+debugger
+
+if(myYear < 1800 || myYear >= 2100 ) {
+    
+  return "Please Enter Please enter a correct value between 1830 and 2100";
+   
+}
+
+if(myYear !== '' && myYear == 0){
+   alert ("Please enter a correct value");
+   return "Incorrect value. Please Enter again";
+   
+}
+    
+    if(myYear % 4 === 0 && (myYear % 100 !== 0 || myYear % 400 === 0)) {
+        // Leap year
+    
+     return "Leap Year";
+        
+    } else {
+        // Not a leap year
+       
+       return "Normal Year";
+        
+    }
+  }
+
+result = daysInYear(myYear);
+console.log(result);
+
+document.getElementById("demo").innerHTML = result;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p> A Program to find 1st January be a Sunday between 2014 and 2050</p>
+    <input id="year" placeholder="Type in the Year">
+    <button onclick="xyz()">Try it</button>
+    <p id="demo"></p>
+    <script>
+    function xyz() {
+        var result = result || 'Oops Techinal Problem';
+        var myArr = [];
+        var myYear = document.getElementById("year").value;
+
+        var eval = function(myYear) {
+
+
+            if (myYear < 2014 || myYear > 2050) {
+
+                return "Please enter a correct value between 2014 and 2050";
+            } else {
+
+                if (myYear !== '' && myYear == 0) {
+                    alert("Please enter a correct value");
+                    return "Incorrect value. Please Enter again";
+
+                }
+
+                for (i = myYear; i <= 2050; i++) {
+
+                    var myFlag = 0;
+                    var d = new Date(i, 0, 1);
+
+                    var Day = d.getDay();
+
+                    if (Day === undefined || Day === null) {
+
+                        myFlag = 1;
+                        console.log("unexpected value");
+                        break;
+
+                    }
+
+                    if (Day === 0) {
+                      
+                        if (myArr[i] != -1) {
+                            myArr.push(i);
+                        }
+                    }
+
+                }
+
+                if (typeof myArr !== 'undefined' && myArr.length > 0) {
+                // the array is defined and has at least one element
+                return myArr;
+              }
+                else{
+                  return "The years which has Jan 1st to be a sunday are : is None";
+                }
+            }
+            return;
+        }
+
+      
+        result = eval(myYear);
+        console.log(result);
+        if (typeof result === 'string') {
+            fresult = result;
+            document.getElementById("demo").innerHTML = fresult;
+
+        } else {
+          
+            fresult = result.join(' , ');
+            document.getElementById("demo").innerHTML = "The years which has Jan 1st to be a sunday are :" + " " + fresult;
+
+        } //To neatly space out the output value in the array
+        
+    }
+    </script>
+</body>
+
+</html>
+
+
